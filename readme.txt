@@ -24,3 +24,11 @@ no changes added to commit (use "git add" and/or "git commit -a")  暂存区为�
 git diff 或者 git diff 文件路径
 最后按“q”推出信息打印。
 
+git log  查看每次提交的版本号
+回退到指定版本号：
+git reset --hard 对应版本号（即commid_id,可以是前若干位数）
+回退到指定版本号后又想回到最新的版本号此时git log已找不到之前最新的版本号,git reflog查看命令历史，以便确定要回到未来的哪个版本;
+
+让工作区文件回退到最近一次add（暂存区）或commit（版本库）后的状态：
+git checkout -- 文件路径
+注意：如果没有 -- 就变成的切换分支了。
