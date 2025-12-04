@@ -48,5 +48,6 @@ git reset HEAD <文件> 就是让文件的「暂存区状态」回到这个参�
 若add且commit，要撤回的话只能用“git reset --hard 对应版本号”版本回退（前提是还没推到远程仓库）。
 
 5.5 删除文件
-
+手动删除工作区文件后，如果不是误删则git rm 文件名，再commit就好；
+如果是误删要恢复：git checkout -- 文件路径
 
