@@ -51,3 +51,33 @@ git reset HEAD <文件> 就是让文件的「暂存区状态」回到这个参�
 手动删除工作区文件后，如果不是误删则git rm 文件名，再commit就好；
 如果是误删要恢复：git checkout -- 文件路径
 
+
+6.1 将本地仓库于github仓库关联并推送分支：
+1. 修改分支名称，旧版git和部分新版git的默认分支命名位master，
+而GitHub/GitLab 等平台已将默认分支名从 master 改为 main（出于命名规范考量），
+如果本地分支名和远程默认分支名不一致，推送时会出现「分支不匹配」报错，因此必须统一为 main。
+git branch：分支操作命令；
+-M：--move --force 的缩写，「强制重命名分支」；
+main：目标分支名（最终要改成的名字）。
+git branch -M main 
+2. 关联远程仓库
+git remote add origin https://github.com/shuimuquan/learngit.git
+
+git remote：远程仓库管理命令；
+add：添加远程仓库关联；
+origin：给远程仓库起的「别名」（可自定义，比如叫 github，但 origin 是行业通用默认名）；
+后面的 URL：GitHub 上你的仓库专属地址（HTTPS 协议）。
+
+建立「本地仓库」和「GitHub 上 learngit 远程仓库」的关联关系，让 Git 知道「要把代码推送到哪个远程地址」。
+
+3. 推送本地代码到远程仓库
+git push -u origin main
+
+git push：推送本地代码到远程仓库；
+-u：--set-upstream 的缩写，「设置上游关联」；
+origin：要推送的远程仓库别名（对应上一句的 origin）；
+main：要推送的本地分支名（对应第一步重命名后的 main 分支）
+
+① 把本地 main 分支的所有提交记录（比如你之前的 first commit）推送到 origin 对应的 GitHub 远程仓库；
+② -u 建立「本地 main 分支」和「远程 origin/main 分支」的关联，后续推送只需输 git push 即可，不用再写全 git push origin main。
+
