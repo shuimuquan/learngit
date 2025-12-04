@@ -82,3 +82,14 @@ main：要推送的本地分支名（对应第一步重命名后的 main 分支�
 ② -u 建立「本地 main 分支」和「远程 origin/main 分支」的关联，后续推送只需输 git push 即可，不用再写全 git push origin main。
 
 ----------
+若因为网络问题push失败，电脑配置梯子后，设置：
+# 配置代理（替换为你的代理地址，常见：127.0.0.1:7890/1080）
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+
+# 重新推送
+git push
+
+# 推送完成后，清除代理配置
+git config --global --unset http.proxy
+git config --global --unset https.proxy
