@@ -81,3 +81,4 @@ main：要推送的本地分支名（对应第一步重命名后的 main 分支�
 ① 把本地 main 分支的所有提交记录（比如你之前的 first commit）推送到 origin 对应的 GitHub 远程仓库；
 ② -u 建立「本地 main 分支」和「远程 origin/main 分支」的关联，后续推送只需输 git push 即可，不用再写全 git push origin main。
 
+----------
