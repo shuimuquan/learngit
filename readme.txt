@@ -95,3 +95,8 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 
 ------------------7 分支管理-----------------------
+git checkout -b dev
+dev分支上修改/add/commit
+git checkout main
+git merge dev   (将dev上的修改合并到main上)
+git branch -d dev  (已经合并的情况下删除dev，若没合并想删除dev则用-D)
