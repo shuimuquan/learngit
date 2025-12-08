@@ -100,3 +100,5 @@ dev分支上修改/add/commit
 git checkout main
 git merge dev   (将dev上的修改合并到main上)
 git branch -d dev  (已经合并的情况下删除dev，若没合并想删除dev则用-D)
+
+Create a new branch is quick & simple.
