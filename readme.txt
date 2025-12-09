@@ -101,6 +101,7 @@ git checkout main
 git merge dev   (将dev上的修改合并到main上)
 git branch -d dev  (已经合并的情况下删除dev，若没合并想删除dev则用-D)
 
-
+若上面的合并出现冲突，则解决冲突后在main分支再add和commit，之后可以用git log --graph命令可以看到分支合并图。
 Creating a new branch is quick AND simple.
+
 
