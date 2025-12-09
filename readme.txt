@@ -104,8 +104,23 @@ git branch -d dev  (已经合并的情况下删除dev，若没合并想删除dev
 若上面的合并出现冲突，则解决冲突后在main分支再add和commit，之后可以用git log --graph命令可以看到分支合并图。
 Creating a new branch is quick AND simple.
 
-dev2修改完
-dev2修改完````
-临时修改bug
-临时修改bug
-dev1修改中·····
+
+---------------------------bug分支-------------------
+在main分支：git checkout -b dev1
+在dev1中修改了一半，临时有个bug要修改，怎么办？
+在dev1分支先把修改的推进栈：git stash
+切换到main分支：git checkout main
+拉最新代码：git pull
+切换新分支：git checkout -b dev2
+在dev2修复bug后，在dev2中add+commit
+切到main分支：git checkout main
+在main分支合并dev2：git merge dev2
+可用 git log 查看刚刚提交的编号，如cc9e08149977eb0279f8165b31ca2e3c01647d11
+切换到dev1分支：git checkout dev1
+在dev1分支先把main的修改复制过来：git cherry-pick cc9e08149977eb0279f8165b31ca2e3c01647d11
+dev1中把之前推进栈的内容提出来：git stash pop
+此时会有冲突：处理完冲突就好了
+dev1中改完后add+commit
+切换会main分支，合并dev1，git merge dev1
+此时会有冲突：处理完冲突就好了
+main中add+commit+push
