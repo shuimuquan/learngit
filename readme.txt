@@ -119,8 +119,11 @@ Creating a new branch is quick AND simple.
 切换到dev1分支：git checkout dev1
 在dev1分支先把main的修改复制过来：git cherry-pick cc9e08149977eb0279f8165b31ca2e3c01647d11
 dev1中把之前推进栈的内容提出来：git stash pop
-此时会有冲突：处理完冲突就好了
+注意先复制修改再出栈，此时会有冲突：处理完冲突就好了
 dev1中改完后add+commit
 切换会main分支，合并dev1，git merge dev1
 此时会有冲突：处理完冲突就好了
 main中add+commit+push
+
+
+-------------dev1 first commit-------------
