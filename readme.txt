@@ -124,3 +124,23 @@ dev1中改完后add+commit
 切换会main分支，合并dev1，git merge dev1
 此时会有冲突：处理完冲突就好了
 main中add+commit+push
+
+
+-------------dev1 first commit-------------
+第二开发者提交
+第一开发者提交
+
+---------------------多人协作-------------------
+1. 新建开发分支
+第一人拉取最新main分支，切出新分支dev1，dev1中修改后，git push,此时远程端也会多出一个dev1分支；
+2.在另一个地方clone仓库（模拟第二个人的开发），clone完成后 git branch 查看本地分支只能看到有main分支，因为git默认clone只拉去主分支；
+git branch -r 查看远程分支除了main还有dev1，在main分支下用以下指令新建一个本地dev1分支且该分支是从远程的dev1分支下载下来的：
+git checkout -b dev1 origin/dev1
+此时第二个人就可以在dev1分支上修改并提交push代码；
+
+3.第一个人在dev1分支上修改完代码后add+commit，最后在push时失败，
+因为远程端存在第一个人本地没有的提交（第二个人push了新代码）；
+4. 此时第一个人需要先拉取最新代码 git pull ，pull后可能有冲突，解决冲突（即合并了两个人代码）后重新add+commit+push即可；
+
+
+
