@@ -143,4 +143,7 @@ git checkout -b dev1 origin/dev1
 4. 此时第一个人需要先拉取最新代码 git pull ，pull后可能有冲突，解决冲突（即合并了两个人代码）后重新add+commit+push即可；
 
 
+
 fitst
+second
+
